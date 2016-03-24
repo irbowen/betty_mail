@@ -1,0 +1,7 @@
+TO: {{email}}
+SUBJECT: Testing mailmerge
+FROM: Isaac Bowen <irbowen@umich.edu>
+
+Hi, {{name}},
+
+Your number is {{number}}.
