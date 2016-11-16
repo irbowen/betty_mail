@@ -10,3 +10,5 @@ After you clone, just type
 ```bash
 ./run.sh
 ```
+
+If evertying looks good, edit run.sh to have --no-dry-run, and run again. You're emails should be sending!
