@@ -1,7 +1,10 @@
-TO: {{email}}
-SUBJECT: Testing mailmerge
+TO: {{email}}@umich.edu
+SUBJECT: Betty wall of shame
 FROM: Isaac Bowen <irbowen@umich.edu>
 
 Hi, {{name}},
 
-Your number is {{number}}.
+I'm mass emailing you because you have a balance of {{balance}} at Chezy Betty, which you have carried for {{days}} days.
+Chez is student run, and your debt is covered by poor graduate students!
+Please pay this as soon as possible!
+
