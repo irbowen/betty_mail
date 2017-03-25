@@ -1,11 +1,11 @@
 TO: {{email}}@umich.edu
-SUBJECT: Betty wall of shame
+SUBJECT: {{ ri('Chez-Betty wall-of-shame') }}
 FROM: Isaac Bowen <irbowen@umich.edu>
 
 Hi, {{name}},
 
-I'm mass emailing you because you have a balance of {{balance}} at Chezy Betty, which you have carried for {{days}} days.
+{{ ri("I'm mass emailing you because you have a balance of") }} ${{balance}} {{ ri("at Chezy-Betty, which you have carried for") }} {{days}} {{ ri("days.
 Chez is student run, and your debt is covered by poor graduate students!
-Right now, the debt is over $3000!
-Please pay this as soon as possible!
+Right now, the debt is over") }} ${{ get_betty_debt() }}!
+{{ ri("Please pay this as soon as possible!") }}
 
