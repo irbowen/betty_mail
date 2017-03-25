@@ -3,27 +3,35 @@ import csv
 
 INSERT_CHARS = [u'\u200A']
 
-# randomly inserts a random char (from INSERT_CHARS) into each word in the input
-# and returns the string
-def ri(input):
+# randomly inserts a random char (from INSERT_CHARS) into each word,
+# numInserts times, in the input string and returns the new string
+def ri(input, numInserts):
 	minWordLength = 2
 	words = input.split(' ')
 	finalWords = []
 
 	for word in words:
+		numCharsToInsert = numInserts
+
 		if len(word) <= minWordLength:
 			finalWords.append(word)
 			continue
-		# choose a random index to insert char
-		randInsertIndex = random.randint(1, len(word)-1)
-		# choose a random char
-		randCharIndex = random.randint(0, len(INSERT_CHARS)-1)
-		randChar = INSERT_CHARS[randCharIndex]
+		# prevent excessive inserts
+		elif len(word) <= numInserts:
+			numCharsToInsert = len(word) / 2
 
-		# create new string with insertion
-		newStr = word[:randInsertIndex] + randChar + word[randInsertIndex:]
+		newWord = word
+		for i in range(numCharsToInsert):
+			# choose a random index to insert char
+			randInsertIndex = random.randint(1, len(newWord)-1)
+			# choose a random char
+			randCharIndex = random.randint(0, len(INSERT_CHARS)-1)
+			randChar = INSERT_CHARS[randCharIndex]
 
-		finalWords.append(newStr)
+			# create new string with insertion
+			newWord = newWord[:randInsertIndex] + randChar + newWord[randInsertIndex:]
+
+		finalWords.append(newWord)
 
 	return ' '.join(finalWords)
 
